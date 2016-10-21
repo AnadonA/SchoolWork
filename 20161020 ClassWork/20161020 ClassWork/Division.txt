@@ -1,0 +1,40 @@
+﻿What stats to aim for and priority of gear rolls:
+
+    4p Tactician's Authority and 2p Final Measure - usual Tank setup
+    75% armor - getting +armor rolls on:
+        Vest
+        Holster
+        Knee Pads and gear mods / Backpack
+    85-90% Exotic Damage Resilience - getting +EDR rolls on:
+        Vest
+        Mask (instead Skill Power) - that's the biggest sacrifice in this build
+        Knee Pads
+        Gear mods (if possible - armor and reaching ~28k SP should take priority) - please note that the more EDR you have even the smallest increase of 3% will be noticeable
+    28-30k Skill Power - why not only 25k? Smart Cover reaches the cap of 75% damage resistance at around 53-55k SP and having base SP like that allows for great initial buffs
+        3-stat holster
+        At least one piece rolled for Electronics (ideally it'd be the mask, having the second one rolled for stamina with skill power would allow to quickly change it for higher health compensating skill power difference when high EDR is not needed)
+        Backpack (in case if it's rolled for +armor that should leave 1 extra mod slot on Knee Pads)
+        Gear mods with +skill power
+    Stamina and health - putting the rest into Stamina should net around 100-120k health depending on rolls (average rolls should give a little bit over 100k health)
+        The rest of gear rolled for Stamina
+        Gear mods with Stamina main stat
+
+Skills and talents:
+
+Smart Cover Trapper Mod - I prefer this over Recharger, enemies that take cover are usually those that can still hurt you with bullets, making them take more and deal less damage is really helpful when dancing in flames
+First Aid Overdose or Pulse Tactical Scanner - First Aid is obvious choice, but when playing with good team and fighting other factions going with Pulse is great option, weapon with Self-preserved talent is really helpful there
+Recovery Link or Tactical Link - as a team member who won't go down so easily, using these signature skills as often as possible is much more efficient rather than saving that Survivor Link in case you'll need it, smart cover alone can give almost the same damage resistance, and high skill power makes cooldown of signatures much shorter
+
+Critical Save - must have talent in almost every build, 10s of extra damage resistance for any type of healing in last segment of health, and sometimes it can proc if you have more health, weapon with Self-preserved goes the best with it
+Battle Buddy - 50% damage resistance for both you and the person you revive and you'll probably revive the most
+Combat Medic (when fixed) - currently it destroys Smart Cover, but when fixed this will be another must have talent
+One is None - I use it for extra DPS, the fact that you can stand face to face to enemies with flamethrowers and shoot them ignoring the flames makes this talent a good choice
+Precision - when running without Pulse (solo for example) it's good to take this instead of Battle Buddy for extra crit chance
+Play style:
+
+Against Cleaners - instead keeping your distance you want to go in and get as close as possible to enemies with flamethrowers taking their attention from your teammates, using smart cover to quickly stick to it for extra damage buff and resistance that will last 5s after leaving cover, rush and activate it near enemies that are hiding behind covers to weaken them
+Against other factions - nothing changes that much except you can sit and eat the grenades they're throwing at you, stick to smart cover providing buffs, it's good to take pulse instead of first aid for 40% crit chance and 100% crit damage
+
+I hope this will be helpful for some to get ready before the next incursion with Cleaners. Personally I can't wait for it.
+
+-------------------------------------------------------------------------------
