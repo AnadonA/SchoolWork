@@ -50,7 +50,7 @@ using namespace std;
 
 
 // CONSTANTS & TYPEDEFS -------------------------------------------------------
-const int MAT_SIZE = 2000;        //# of objects per array within the matrices
+const int MAT_SIZE = 1000;        //# of objects per array within the matrices
 typedef float* DynMat[MAT_SIZE];
 
 
