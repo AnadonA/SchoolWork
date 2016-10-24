@@ -11,11 +11,12 @@ public:
    FHs_treeNode( const Comparable & d = Comparable(), 
       FHs_treeNode *lt = NULL, 
       FHs_treeNode *rt = NULL)
-      : lftChild(lt), rtChild(rt), data(d)
+      : lftChild(lt), rtChild(rt), data(d), deleted(false)
    { }
 
    FHs_treeNode *lftChild, *rtChild;
    Comparable data;
+   bool deleted;
 
    // for use only with AVL Trees
    virtual int getHeight() const { return 0; }
@@ -27,7 +28,7 @@ template <class Comparable>
 class FHsearch_tree
 {
 protected:
-   int mSize;
+   int mSize, mSizeHard;
    FHs_treeNode<Comparable> *mRoot;
 
 public:
@@ -42,11 +43,14 @@ public:
 
    bool empty() const { return (mSize == 0); }
    int size() const { return mSize; }
+   int sizeHard() const { return mSizeHard; }
    void clear() { makeEmpty(mRoot); }
    const FHsearch_tree & operator=(const FHsearch_tree &rhs);
 
+   void collectGarbage();
    bool insert(const Comparable &x);
    bool remove(const Comparable &x);
+   bool removeHard(const Comparable &x);
    bool contains(const Comparable &x) const { return find(mRoot, x) != NULL; }
 
    template <class Processor>
@@ -59,9 +63,11 @@ protected:
    FHs_treeNode<Comparable> *findMax(FHs_treeNode<Comparable> *root) const;
    FHs_treeNode<Comparable> *find(FHs_treeNode<Comparable> *root,
       const Comparable &x) const;
-   bool insert(FHs_treeNode<Comparable> * &root,
-      const Comparable &x);
+
+   void collectGarbage(FHs_treeNode<Comparable> * &root);
+   bool insert(FHs_treeNode<Comparable> * &root, const Comparable &x);
    bool remove(FHs_treeNode<Comparable> * &root, const Comparable &x);
+   bool removeHard(FHs_treeNode<Comparable> * &root, const Comparable &x);
    void makeEmpty(FHs_treeNode<Comparable> * &subtreeToDelete);
    template <class Processor>
    void traverse(FHs_treeNode<Comparable> *treeNode, 
@@ -114,6 +120,12 @@ const FHsearch_tree<Comparable> &FHsearch_tree<Comparable>::operator=
       mSize = rhs.size();
    }
    return *this;
+}
+
+template <class Comparable>
+void FHsearch_tree<Comparable>::collectGarbage()
+{
+
 }
 
 template <class Comparable>
@@ -201,6 +213,12 @@ FHs_treeNode<Comparable>* FHsearch_tree<Comparable>::find(
    if (root->data < x)
       return find(root->rtChild, x);
    return root;
+}
+
+template <class Comparable>
+void FHsearch_tree<Comparable>::collectGarbage(FHs_treeNode<Comparable> * &root)
+{
+
 }
 
 template <class Comparable>
