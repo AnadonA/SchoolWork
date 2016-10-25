@@ -1,5 +1,6 @@
 // File FHsearch_tree.h
 // Template definitions for FHsearchTrees, which are general trees
+// 20161024 [modifications] Anthony Anadon 
 #ifndef FHSEARCHTREE_H
 #define FHSEARCHTREE_H
 
@@ -16,6 +17,9 @@ public:
 
    FHs_treeNode *lftChild, *rtChild;
    Comparable data;
+
+   // 20161023 aanadon
+   // Added for the implementation of soft node deletion.
    bool deleted;
 
    // for use only with AVL Trees
@@ -47,11 +51,11 @@ public:
    void clear() { makeEmpty(mRoot); }
    const FHsearch_tree & operator=(const FHsearch_tree &rhs);
 
-   void collectGarbage();
-   bool insert(const Comparable &x);
-   bool remove(const Comparable &x);
-   bool removeHard(const Comparable &x);
-   bool contains(const Comparable &x) const { return find(mRoot, x) != NULL; }
+   int   collectGarbage();
+   bool  insert(const Comparable &x);
+   bool  remove(const Comparable &x);
+   bool  removeHard(const Comparable &x);
+   bool  contains(const Comparable &x) const { return find(mRoot, x) != NULL; }
 
    template <class Processor>
    void traverse(Processor func) const { traverse(mRoot, func); }
@@ -64,15 +68,15 @@ protected:
    FHs_treeNode<Comparable> *find(FHs_treeNode<Comparable> *root,
       const Comparable &x) const;
 
-   void collectGarbage(FHs_treeNode<Comparable> * &root);
-   bool insert(FHs_treeNode<Comparable> * &root, const Comparable &x);
-   bool remove(FHs_treeNode<Comparable> * &root, const Comparable &x);
-   bool removeHard(FHs_treeNode<Comparable> * &root, const Comparable &x);
-   void makeEmpty(FHs_treeNode<Comparable> * &subtreeToDelete);
+   int   collectGarbage(FHs_treeNode<Comparable> * &root);
+   bool  insert(FHs_treeNode<Comparable> * &root, const Comparable &x);
+   bool  remove(FHs_treeNode<Comparable> * &root, const Comparable &x);
+   bool  removeHard(FHs_treeNode<Comparable> * &root, const Comparable &x);
+   void  makeEmpty(FHs_treeNode<Comparable> * &subtreeToDelete);
    template <class Processor>
-   void traverse(FHs_treeNode<Comparable> *treeNode, 
+   void  traverse(FHs_treeNode<Comparable> *treeNode, 
       Processor func, int level = -1) const;
-   int findHeight(FHs_treeNode<Comparable> *treeNode, int height = -1) const;
+   int   findHeight(FHs_treeNode<Comparable> *treeNode, int height = -1) const;
    
 public:
    // for exception throwing
@@ -84,7 +88,7 @@ public:
 template <class Comparable>
 const Comparable & FHsearch_tree<Comparable>::findMin() const
 {
-   if (mRoot == NULL)
+   if (mRoot == NULL || mSize == 0)
       throw EmptyTreeException();
    return findMin(mRoot)->data;
 }
@@ -92,7 +96,7 @@ const Comparable & FHsearch_tree<Comparable>::findMin() const
 template <class Comparable>
 const Comparable & FHsearch_tree<Comparable>::findMax() const
 {
-   if (mRoot == NULL)
+   if (mRoot == NULL || mSize == 0)
       throw EmptyTreeException();
    return findMax(mRoot)->data;
 }
@@ -118,14 +122,18 @@ const FHsearch_tree<Comparable> &FHsearch_tree<Comparable>::operator=
       clear();
       mRoot = clone(rhs.mRoot);
       mSize = rhs.size();
+      mSizeHard = rhs.sizeHard();
    }
    return *this;
 }
 
 template <class Comparable>
-void FHsearch_tree<Comparable>::collectGarbage()
+int FHsearch_tree<Comparable>::collectGarbage()
 {
+   if (mRoot == NULL)
+      return -1;
 
+   return collectGarbage(mRoot);
 }
 
 template <class Comparable>
@@ -134,6 +142,7 @@ bool FHsearch_tree<Comparable>::insert(const Comparable &x)
    if (insert(mRoot, x))
    {
       mSize++;
+      mSizeHard++;
       return true;
    }
    return false;
@@ -151,15 +160,27 @@ bool FHsearch_tree<Comparable>::remove(const Comparable &x)
 }
 
 template <class Comparable>
+bool FHsearch_tree<Comparable>::removeHard(const Comparable &x)
+{
+   if (removeHard(mRoot, x))
+   {
+      mSizeHard--;
+      return true;
+   }
+   return false;
+}
+
+template <class Comparable>
 template <class Processor>
 void FHsearch_tree<Comparable>::traverse( FHs_treeNode<Comparable> *treeNode,
    Processor func, int level) const
 {
    if (treeNode == NULL)
       return;
+
    // we're not doing anything with level but its there in case we want it
    traverse(treeNode->lftChild, func, level + 1);
-   func(treeNode->data);
+   func(treeNode->data, treeNode->deleted);
    traverse(treeNode->rtChild, func, level + 1);
 }
 
@@ -216,11 +237,31 @@ FHs_treeNode<Comparable>* FHsearch_tree<Comparable>::find(
 }
 
 template <class Comparable>
-void FHsearch_tree<Comparable>::collectGarbage(FHs_treeNode<Comparable> * &root)
+int FHsearch_tree<Comparable>::collectGarbage(
+   FHs_treeNode<Comparable> * &treeNode)
 {
+   // For testing||debugging purposes
+   static int CollectedGarbageCount = 0;
 
+   // All done with this branch
+   if (treeNode == NULL)
+      return CollectedGarbageCount;
+
+   collectGarbage(treeNode->lftChild);
+   collectGarbage(treeNode->rtChild);
+
+   if (treeNode->deleted)
+   {
+      CollectedGarbageCount++;
+      removeHard(treeNode->data);
+   }
+
+   return CollectedGarbageCount;
 }
 
+// 20161024 aanadon
+// Modified to 'undelete' lazily deleted nodes that have been re-inserted. This
+// returns true: as if the node was actually inserted (instead of 'un-deleted')
 template <class Comparable>
 bool FHsearch_tree<Comparable>::insert(
    FHs_treeNode<Comparable> * &root, const Comparable &x)
@@ -234,10 +275,17 @@ bool FHsearch_tree<Comparable>::insert(
       return insert(root->lftChild, x);
    else if (root->data < x)
       return insert(root->rtChild, x);
+   else if (root->deleted)
+   {
+      root->deleted = false;
+      mSize++;
+   }
 
    return false; // duplicate
 }
 
+// 20161023 aanadon
+// Modified to incorporate lazy deletion of tree nodes.
 template <class Comparable>
 bool FHsearch_tree<Comparable>::remove(
    FHs_treeNode<Comparable> * &root, const Comparable &x)
@@ -250,17 +298,44 @@ bool FHsearch_tree<Comparable>::remove(
    if (root->data < x)
       return remove(root->rtChild, x);
 
+   // Target node found. Only process the deletion if it hasn't previously been
+   // 'deleted'. This will help to avoid multiple delete calls affecting the 
+   // 'soft' size counter.
+   if (!root->deleted)
+   {
+      root->deleted = true;
+      return true;
+   }
+   return false;
+}
+
+// 20161023 aanadon
+// Copied from the original FHsearch_tree<Comparable>::remove(...) function
+template <class Comparable>
+bool FHsearch_tree<Comparable>::removeHard(
+   FHs_treeNode<Comparable> * &root, const Comparable &x)
+{
+   if (root == NULL)
+      return false;
+
+   if (x < root->data)
+      return removeHard(root->lftChild, x);
+   if (root->data < x)
+      return removeHard(root->rtChild, x);
+
    // found the node
    if (root->lftChild != NULL && root->rtChild != NULL)
    {
       FHs_treeNode<Comparable> *minNode = findMin(root->rtChild);
       root->data = minNode->data;
-      remove(root->rtChild, minNode->data);
+      removeHard(root->rtChild, minNode->data);
    }
    else
    {
       FHs_treeNode<Comparable> *nodeToRemove = root;
-      root = (root->lftChild != NULL)? root->lftChild : root->rtChild;
+      if (!root->deleted)
+         mSize--;
+      root = (root->lftChild != NULL) ? root->lftChild : root->rtChild;
       delete nodeToRemove;
    }
    return true;
@@ -277,10 +352,14 @@ void FHsearch_tree<Comparable>::makeEmpty(
    makeEmpty(subtreeToDelete->lftChild);
    makeEmpty(subtreeToDelete->rtChild);
 
+
+   if (!subtreeToDelete->deleted)
+      mSize--;
+   --mSizeHard;
+
    // clear client's pointer
    delete subtreeToDelete;
    subtreeToDelete = NULL;
-   --mSize;
 }
 
 template <class Comparable>
