@@ -20,10 +20,10 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FHsplayTree.h">
+    <ClInclude Include="FHsearch_tree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="FHsearch_tree.h">
+    <ClInclude Include="FHsplayTree.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
