@@ -49,5 +49,7 @@ int main()
          << " height: " << searchTree.showHeight() << endl;
    }
 
+
+   searchTree.traverse(intPrinter);
    return 0;
 }
