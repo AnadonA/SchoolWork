@@ -10,7 +10,11 @@
 #define INCL_FHHASHQPWFIND_H
 
 // HEADER INCLUSIONS ----------------------------------------------------------
+
+#include <exception>
 #include "FHhashQP.h"
+
+using namespace std;
 
 // FHHASHQPWFIND OBJECT DESCRIPTION -------------------------------------------
 template <class Object, typename KeyType>
@@ -25,16 +29,21 @@ public:
 
 
    // Custom Exception Definitions  -------------------------------------------
-   class NotFoundException : public Exception {};
+   class NotFoundException : public exception {};
 };
 
 // PROTECTED METHOD DEFINITIONS  ----------------------------------------------
 template <class Object, typename KeyType>
 int FHhashQPwFind<Object, KeyType>::myHashKey(const KeyType &key) const
 {
-   return 0;
-}
+   int hashVal;
 
+   hashVal = Hash(key) % mTableSize;
+   if (hashVal < 0)
+      hashVal += mTableSize;
+
+   return hashVal;
+}
 
 
 
@@ -43,7 +52,18 @@ int FHhashQPwFind<Object, KeyType>::myHashKey(const KeyType &key) const
 template <class Object, typename KeyType>
 int FHhashQPwFind<Object, KeyType>::findPosKey(const KeyType &key) const
 {
-   return 0;
+   int kthOddNum = 1;
+   int index = myHashKey(key);
+
+   while (mArray[index].state != EMPTY)
+   {
+      index += kthOddNum;  // k squared = (k-1) squared + kth odd #
+      kthOddNum += 2;   // compute next odd #
+      if (index >= mTableSize)
+         index -= mTableSize;
+   }
+
+   return index;
 }
 
 
@@ -56,9 +76,12 @@ int FHhashQPwFind<Object, KeyType>::findPosKey(const KeyType &key) const
 template <class Object, typename KeyType>
 const Object FHhashQPwFind<Object, KeyType>::find(const KeyType &key)
 {
-   throw new typename NotFoundException();
+   int hash = findPosKey(key);
 
-   return NULL;
+   if (mArray[hash].state == ACTIVE)
+      return mArray[hash].data;
+
+   throw new typename NotFoundException();
 }
 
 #endif

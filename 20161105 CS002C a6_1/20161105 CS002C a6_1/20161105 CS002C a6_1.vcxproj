@@ -82,6 +82,9 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -111,11 +114,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="a6_1.cpp" />
+    <ClCompile Include="EBookEntry.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EBookEntry.h" />
     <ClInclude Include="FHhashQP.h" />
     <ClInclude Include="FHhashQPwFind.h" />
     <ClInclude Include="FHvector.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="catalog-short4.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
