@@ -32,5 +32,8 @@
     <ClInclude Include="FHvector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="FHflowGraph.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
