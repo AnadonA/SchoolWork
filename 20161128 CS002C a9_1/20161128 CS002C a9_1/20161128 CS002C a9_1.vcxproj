@@ -112,6 +112,12 @@
   <ItemGroup>
     <ClCompile Include="a9_1.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FHgraph.h" />
+    <ClInclude Include="FHkruskal.h" />
+    <ClInclude Include="FHsort.h" />
+    <ClInclude Include="FHvector.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
