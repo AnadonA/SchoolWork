@@ -28,7 +28,7 @@ public:
    static void pushSortKey() { keyStack.push(nSortKey); }
    static void popSortKey() { nSortKey = keyStack.top(); keyStack.pop(); }
 
-   static int const INFINITY_FH = INT_MAX;  // defined in limits.h
+   static int const FHINFINITY = INT_MAX;  // defined in limits.h
    Object data;
    CostType dist;
    VertPtr nextInPath;  // used for client-specific info
@@ -71,7 +71,7 @@ bool FHflowVertex<Object, CostType>::setNSortType(int whichType)
 
 template <class Object, typename CostType>
 FHflowVertex<Object, CostType>::FHflowVertex(const Object & x)
-   : data(x), dist((CostType)INFINITY_FH),
+   : data(x), dist((CostType)FHINFINITY),
    nextInPath(NULL)
 {
    // nothing to do
@@ -166,16 +166,31 @@ public:
    void addEdge(const Object &source, const Object &dest, CostType cost);
    VertPtr addToVertexSet(const Object & object);
    void clear();
+   
+   // Additions and\or Modifications
+   void showResAdjTable();
+   void showFlowAdjTable();
+   bool setEndVert(const Object &Data);
+   bool setStartVert(const Object &Data);
 
-   // algorithms
-   bool dijkstra(const Object & x);
-   bool showShortestPath(const Object & x1, const Object &  x2);
-   bool showDistancesTo(const Object & x);
+   CostType findMaxFlow();
+   CostType getLimitingFlowOnResPath();
+
 
 private:
    VertPtr getVertexWithThisData(const Object & x);
+
+   // Additions and\or Modifications
+   bool establishNextFowPath();
+   bool adjustPathByCost(CostType cost);
+   bool addCostToResEdge(VertPtr src, VertPtr dst, CostType cost);
+   bool addCostToFlowEdge(VertPtr src, VertPtr dst, CostType cost);
+
+   CostType getCostOfResEdge(VertPtr src, VertPtr dst);
+
 };
 
+// Unchanged...
 template <class Object, typename CostType>
 FHflowVertex<Object, CostType>* FHflowGraph<Object, CostType>::addToVertexSet(
    const Object & object)
@@ -198,6 +213,7 @@ FHflowVertex<Object, CostType>* FHflowGraph<Object, CostType>::addToVertexSet(
    return vPtr;
 }
 
+// Unchanged...
 template <class Object, typename CostType>
 void FHflowGraph<Object, CostType>::clear()
 {
@@ -205,31 +221,8 @@ void FHflowGraph<Object, CostType>::clear()
    vertPtrSet.clear();
 }
 
-template <class Object, typename CostType>
-void FHflowGraph<Object, CostType>::addEdge(
-   const Object &source, const Object &dest, CostType cost)
-{
-   VertPtr src, dst;
-
-   // put both source and dest into vertex list(s) if not already there
-   src = addToVertexSet(source);
-   dst = addToVertexSet(dest);
-
-   // add dest to source's adjacency list
-   src->addToAdjList(dst, cost);
-}
-
-template <class Object, typename CostType>
-void FHflowGraph<Object, CostType>::showAdjTable()
-{
-   typename VertPtrSet::iterator iter;
-
-   cout << "------------------------ \n";
-   for (iter = vertPtrSet.begin(); iter != vertPtrSet.end(); ++iter)
-      (*iter)->showAdjList();
-   cout << endl;
-}
-
+/*
+Saved for reference...
 template <class Object, typename CostType>
 bool FHflowGraph<Object, CostType>::dijkstra(const Object & x)
 {
@@ -246,7 +239,7 @@ bool FHflowGraph<Object, CostType>::dijkstra(const Object & x)
    // initialize the vertex list and place the starting vert in p_p_v queue
    for (vIter = vertPtrSet.begin(); vIter != vertPtrSet.end(); ++vIter)
    {
-      (*vIter)->dist = Vertex::INFINITY_FH;
+      (*vIter)->dist = Vertex::FHINFINITY;
       (*vIter)->nextInPath = NULL;
    }
 
@@ -278,7 +271,9 @@ bool FHflowGraph<Object, CostType>::dijkstra(const Object & x)
    }
    return true;
 }
+*/
 
+// Unchanged...
 template <class Object, typename CostType>
 FHflowVertex<Object, CostType>* FHflowGraph<Object, CostType>::getVertexWithThisData(
    const Object & x)
@@ -296,65 +291,306 @@ FHflowVertex<Object, CostType>* FHflowGraph<Object, CostType>::getVertexWithThis
    return  (VertPtr)&*findResult;     // the address of the vertex in the set of originals
 }
 
-// applies dijkstra, prints all distances - could be modified to skip dijkstra
+// MODIFIED FUNCTIONS   -------------------------------------------------------
 template <class Object, typename CostType>
-bool FHflowGraph<Object, CostType>::showDistancesTo(const Object & x)
+void FHflowGraph<Object, CostType>::addEdge(
+   const Object &source, const Object &dest, CostType cost)
 {
-   typename VertPtrSet::iterator vIter;
+   VertPtr src, dst;
 
-   if (!dijkstra(x))
-      return false;
+   // put both source and dest into vertex list(s) if not already there
+   src = addToVertexSet(source);
+   dst = addToVertexSet(dest);
 
-   cout << "Dist to " << x << " ----------- \n";
-   for (vIter = vertPtrSet.begin(); vIter != vertPtrSet.end(); ++vIter)
-   {
-      cout << (*vIter)->data << " " << (*vIter)->dist << endl;
-   }
-   return true;
+   // add dest to source's adjacency list
+   // Modified to the Res & Flow Adjacency lists and includes the reverse edge
+   src->addToResAdjList(dst, cost);
+   dst->addToResAdjList(src, 0);
+   src->addToFlowAdjList(dst, 0);
 }
 
-// applies dijkstra, prints shortest path - could be modified to skip dijkstra
+// ADDED FUNCTIONS   ----------------------------------------------------------
 template <class Object, typename CostType>
-bool FHflowGraph<Object, CostType>::showShortestPath(const Object & x1,
-   const Object & x2)
+void FHflowGraph<Object, CostType>::showFlowAdjTable()
 {
-   VertPtr vp, start, stop;
-   stack<VertPtr> pathStack;
+   typename VertPtrSet::iterator iter;
+   cout << "-----\tFLOW ADJACENCY TABLE\t-----\n";
+   for (iter = vertPtrSet.begin(); iter != vertPtrSet.end(); ++iter)
+      (*iter)->showFlowAdjList();
+   cout << endl;
+}
 
-   start = getVertexWithThisData(x1);
-   stop = getVertexWithThisData(x2);
-   if (start == NULL || stop == NULL)
+template <class Object, typename CostType>
+void FHflowGraph<Object, CostType>::showResAdjTable()
+{
+   typename VertPtrSet::iterator iter;
+   cout << "-----\tRES ADJACENCY TABLE\t-----\n";
+   for (iter = vertPtrSet.begin(); iter != vertPtrSet.end(); ++iter)
+      (*iter)->showResAdjList();
+   cout << endl;
+}
+
+template <class Object, typename CostType>
+bool FHflowGraph<Object, CostType>::establishNextFowPath()
+{
+   // Don't even try if there is no starting vertex
+   if (NULL == startVertPtr)
       return false;
 
-   // perhaps add argument indicating choice to skip this if pre-computed
-   dijkstra(x1);
+   typename VertPtrSet::iterator vertItr;
+   typename EdgePairList::iterator edgeItr;
+   VertPtr ptrX, ptrY;
+   CostType cost;
+   queue<VertPtr> processedVerts;
 
-   for (vp = stop; vp != start; vp = vp->nextInPath)
+   for (vertItr = vertPtrSet.begin(); vertItr != vertPtrSet.end(); ++vertItr)
    {
-      if (vp->nextInPath == NULL)
-      {
-         cout << "No path found to from " << x1
-            << " to " << x2 << endl;
-         return false;
-      }
-      pathStack.push(vp);
+      (*vertItr)->dist = Vertex::FHINFINITY;
+      (*vertItr)->nextInPath = NULL;
    }
-   pathStack.push(vp);
 
-   cout << "Cost of shortest path from " << x1 << " to " << x2 << ": "
-      << stop->dist << endl;
-   while (true)
+   startVertPtr->dist = 0;
+
+
+   processedVerts.push(startVertPtr);
+   while (!processedVerts.empty())
    {
-      vp = pathStack.top();
-      pathStack.pop();
-      if (pathStack.empty())
+      ptrY = processedVerts.front();
+      processedVerts.pop();
+
+      for (edgeItr = ptrY->resAdjList.begin(); edgeItr != ptrY->resAdjList.end(); edgeItr++)
       {
-         cout << vp->data << endl;
+         ptrX = edgeItr->first;
+         cost = edgeItr->second;
+         if (cost == 0)
+            continue;
+         if (ptrY->dist + cost < ptrX->dist)
+         {
+            ptrX->dist = ptrY->dist + cost;
+            ptrX->nextInPath = ptrY;
+
+            processedVerts.push(ptrX);
+         }
+
+         if (ptrX == endVertPtr)
+            return true;
+      }
+   }
+
+   // Failed to locate the previously set end vert
+   return false;
+}
+
+template <class Object, typename CostType>
+bool FHflowGraph<Object, CostType>::setEndVert(const Object &Data)
+{
+   VertPtr temp = getVertexWithThisData(Data);
+   if (NULL == temp)
+      return false;
+   endVertPtr = temp;
+   return (endVertPtr->data == Data);
+}
+
+template <class Object, typename CostType>
+bool FHflowGraph<Object, CostType>::adjustPathByCost(CostType cost)
+{
+   // If there are no start or end vertices then don't bother
+   if (NULL == startVertPtr || NULL == endVertPtr)
+      return false;
+
+   VertPtr ptr;
+
+   for (ptr = endVertPtr; ptr != startVertPtr; ptr = ptr->nextInPath)
+   {
+      // Discontinue processing if there are no vertices left to process
+      if (NULL == ptr->nextInPath)
          break;
-      }
-      cout << vp->data << " --> ";
+
+
+      if (!addCostToResEdge(ptr->nextInPath, ptr, cost) || !addCostToFlowEdge(ptr->nextInPath, ptr, cost))
+         return false;
    }
+
    return true;
 }
 
+template <class Object, typename CostType>
+bool FHflowGraph<Object, CostType>::setStartVert(const Object &Data)
+{
+   VertPtr temp = getVertexWithThisData(Data);
+   if (NULL == temp)
+      return false;
+
+   startVertPtr = temp;
+   return (startVertPtr->data == Data);
+}
+
+template <class Object, typename CostType>
+CostType FHflowGraph<Object, CostType>::getCostOfResEdge(VertPtr src, VertPtr dst)
+{
+   typename VertPtrSet::iterator vertIter;
+   typename EdgePairList::iterator edgeIter;
+
+   vertIter = vertPtrSet.find(src);
+   if (NULL == src || dst == NULL || vertIter == vertPtrSet.end())
+      return Vertex::FHINFINITY;
+
+   VertPtr ptr = *vertIter;
+
+   for (edgeIter = ptr->resAdjList.begin(); edgeIter != ptr->resAdjList.end(); edgeIter++)
+   {
+      if (edgeIter->first == dst)
+         return edgeIter->second;
+   }
+
+   return Vertex::FHINFINITY;
+}
+
+template <class Object, typename CostType>
+bool FHflowGraph<Object, CostType>::addCostToResEdge(VertPtr src, VertPtr dst, CostType cost)
+{
+   typename VertPtrSet::iterator vertIter;
+   typename EdgePairList::iterator edgeIter;
+
+   vertIter = vertPtrSet.find(src);
+   if (NULL == src || NULL == dst || vertIter == vertPtrSet.end())
+      return false;
+
+   VertPtr ptr = *vertIter;
+   for (edgeIter = ptr->resAdjList.begin(); edgeIter != ptr->resAdjList.end(); edgeIter++)
+   {
+      if (edgeIter->first == dst)
+      {
+         edgeIter->second -= cost;
+         ptr = edgeIter->first;
+
+         for (edgeIter = ptr->resAdjList.begin(); edgeIter != ptr->resAdjList.end(); edgeIter++)
+         {
+            if (edgeIter->first == src)
+            {
+               edgeIter->second += cost;
+               return true;
+            }
+         }
+      }
+   }
+
+   // Failed to locate either the src and\or dst vertices
+   return false;
+}
+
+template <class Object, typename CostType>
+bool FHflowGraph<Object, CostType>::addCostToFlowEdge(VertPtr src, VertPtr dst, CostType cost)
+{
+   typename VertPtrSet::iterator vertIter;
+   typename EdgePairList::iterator edgeIter;
+
+   vertIter = vertPtrSet.find(src);
+   if (NULL == src || NULL == dst || vertIter == vertPtrSet.end())
+      return false;
+
+   VertPtr ptr = *vertIter;
+   for (edgeIter = ptr->flowAdjList.begin(); edgeIter != ptr->flowAdjList.end(); edgeIter++)
+   {
+      if (edgeIter->first == dst)
+      {
+         edgeIter->second += cost;
+         return true;
+      }
+   }
+
+   ptr = edgeIter->first;
+   for (edgeIter = ptr->flowAdjList.begin(); edgeIter != ptr->flowAdjList.end(); edgeIter++)
+   {
+      if (edgeIter->first == src)
+      {
+         edgeIter->second -= cost;
+         return true;
+      }
+   }
+
+   // Failed to locate either the src and\or dst vertices
+   return false;
+}
+
+
+template <class Object, typename CostType>
+CostType FHflowGraph<Object, CostType>::findMaxFlow()
+{
+   CostType TotalCost = 0;
+   typename EdgePairList::iterator iter;
+
+   while (establishNextFowPath())
+      adjustPathByCost(getLimitingFlowOnResPath());
+
+   for (iter = startVertPtr->flowAdjList.begin(); iter != startVertPtr->flowAdjList.end(); iter++)
+      TotalCost += iter->second;
+
+   return TotalCost;
+}
+
+template <class Object, typename CostType>
+CostType FHflowGraph<Object, CostType>::getLimitingFlowOnResPath()
+{
+   // If there are no start or end vertices the don't bother
+   if (NULL == startVertPtr || NULL == endVertPtr)
+      return Vertex::FHINFINITY;
+
+   CostType currFlow, minFlow = Vertex::FHINFINITY;
+   VertPtr ptr;
+
+   for (ptr = endVertPtr; ptr != startVertPtr; ptr = ptr->nextInPath)
+   {
+      // Discontinue processing the loop if there exists no next vertex
+      if (NULL == ptr->nextInPath)
+         break;
+
+      currFlow = getCostOfResEdge(ptr->nextInPath, ptr);
+      minFlow = (currFlow < minFlow) ? currFlow : minFlow;
+   }
+
+   return minFlow;
+}
 #endif
+
+
+/* 
+CONSOLE OUTPUT ----------------------------------------------------------------
+-------------------------------------------------------------------------------
+
+-----   RES ADJACENCY TABLE     -----
+Res Adj List for s: b(2) a(3)
+Res Adj List for b: s(0) a(0) d(2)
+Res Adj List for c: a(0) t(2)
+Res Adj List for a: s(0) b(1) c(3) d(4)
+Res Adj List for d: b(0) a(0) t(3)
+Res Adj List for t: c(0) d(0)
+
+-----   FLOW ADJACENCY TABLE    -----
+Flow Adj List for s: b(0) a(0)
+Flow Adj List for b: d(0)
+Flow Adj List for c: t(0)
+Flow Adj List for a: b(0) c(0) d(0)
+Flow Adj List for d: t(0)
+Flow Adj List for t:
+
+Final flow: 5
+
+-----   RES ADJACENCY TABLE     -----
+Res Adj List for s: b(0) a(0)
+Res Adj List for b: s(2) a(0) d(0)
+Res Adj List for c: a(2) t(0)
+Res Adj List for a: s(3) b(1) c(1) d(3)
+Res Adj List for d: b(2) a(1) t(0)
+Res Adj List for t: c(2) d(3)
+
+-----   FLOW ADJACENCY TABLE    -----
+Flow Adj List for s: b(2) a(3)
+Flow Adj List for b: d(2)
+Flow Adj List for c: t(2)
+Flow Adj List for a: b(0) c(2) d(1)
+Flow Adj List for d: t(3)
+Flow Adj List for t:
+
+
+*/
