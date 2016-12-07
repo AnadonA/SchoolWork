@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CSCI222 Random Maze Generator", "CSCI222 Random Maze Generator\CSCI222 Random Maze Generator.vbproj", "{948FFC76-1DBA-4DA0-9168-FDEDEE6AD1A6}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MemoryLib", "MemoryLib\MemoryLib.vbproj", "{8F8E110A-3CD7-427B-A835-3161DA1F485D}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MazeLib", "MazeLib\MazeLib.vbproj", "{9DDF51EF-2FB4-4F84-8008-DF947469C221}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{948FFC76-1DBA-4DA0-9168-FDEDEE6AD1A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{948FFC76-1DBA-4DA0-9168-FDEDEE6AD1A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{948FFC76-1DBA-4DA0-9168-FDEDEE6AD1A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{948FFC76-1DBA-4DA0-9168-FDEDEE6AD1A6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F8E110A-3CD7-427B-A835-3161DA1F485D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F8E110A-3CD7-427B-A835-3161DA1F485D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F8E110A-3CD7-427B-A835-3161DA1F485D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F8E110A-3CD7-427B-A835-3161DA1F485D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DDF51EF-2FB4-4F84-8008-DF947469C221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DDF51EF-2FB4-4F84-8008-DF947469C221}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DDF51EF-2FB4-4F84-8008-DF947469C221}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DDF51EF-2FB4-4F84-8008-DF947469C221}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
