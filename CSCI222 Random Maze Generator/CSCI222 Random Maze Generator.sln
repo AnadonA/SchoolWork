@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "CSCI222 Random Maze Generator", "CSCI222 Random Maze Generator\CSCI222 Random Maze Generator.vbproj", "{948FFC76-1DBA-4DA0-9168-FDEDEE6AD1A6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9DDF51EF-2FB4-4F84-8008-DF947469C221} = {9DDF51EF-2FB4-4F84-8008-DF947469C221}
+	EndProjectSection
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "MemoryLib", "MemoryLib\MemoryLib.vbproj", "{8F8E110A-3CD7-427B-A835-3161DA1F485D}"
 EndProject

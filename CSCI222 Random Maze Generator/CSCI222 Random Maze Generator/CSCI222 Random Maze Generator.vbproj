@@ -119,6 +119,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MazeLib\MazeLib.vbproj">
+      <Project>{9ddf51ef-2fb4-4f84-8008-df947469c221}</Project>
+      <Name>MazeLib</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MemoryLib\MemoryLib.vbproj">
       <Project>{8f8e110a-3cd7-427b-a835-3161da1f485d}</Project>
       <Name>MemoryLib</Name>
