@@ -66,6 +66,7 @@
     <Compile Include="Class1.vb" />
     <Compile Include="MazeGenerator\Directions.vb" />
     <Compile Include="MazeGenerator\Maze.vb" />
+    <Compile Include="MazeGenerator\MazeObjects.vb" />
     <Compile Include="MazeGenerator\Vectors.vb" />
     <Compile Include="MazeGenerator\SparseMatrix.vb" />
     <Compile Include="MazeGenerator\Walls.vb" />

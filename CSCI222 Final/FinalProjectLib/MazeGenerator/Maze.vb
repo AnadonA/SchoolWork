@@ -14,6 +14,7 @@
 
    Private mShiftPercent As Double = 0.0
    Private mMazeData(0 To MAX_COLS) As String
+   Private mMazeMatrix As cSparseMatrix(Of eMazeObjects)
 
    ''' <summary>
    ''' Returns the compiled string array that will be used to display\draw the
@@ -29,11 +30,11 @@
 
 
    Public Sub New()
-      For Y As Integer = 0 To MAX_COLS
-         For X As Integer = 0 To MAX_ROWS
-            mMazeData(Y) += mWallChar
-         Next
-      Next
+
+      '  Create the MazeMatrix and read it into the string data
+      mMazeMatrix = New cSparseMatrix(Of eMazeObjects)(eMazeObjects.WALL)
+      ReadMatrixToStrings()
+
    End Sub
 
    Public Function CreateMaze() As Boolean
@@ -107,5 +108,31 @@
 
       Return False
    End Function
+
+   Private Sub ReadMatrixToStrings()
+
+      '  Clear the maze string data
+      For Each Line In mMazeData
+         Line = ""
+      Next
+
+      '  Read the current sparse matrix into the string array
+      For Y As Integer = 0 To MAX_ROWS
+         For X As Integer = 0 To MAX_COLS
+            Dim MazeObject = mMazeMatrix.ReadData(X, Y)
+            Select Case MazeObject
+               Case eMazeObjects.PATH
+                  mMazeData(X) += mPathChar
+
+               Case eMazeObjects.PLAYER
+                  mMazeData(X) += mCharChar
+
+               Case Else
+                  mMazeData(X) += mWallChar
+
+            End Select
+         Next
+      Next
+   End Sub
 
 End Class
