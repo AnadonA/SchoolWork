@@ -1,5 +1,5 @@
 ﻿Public Enum eTileTypes
-   EMPTY
-   FULL
+   PATH
+   WALL
    CHARACTER
 End Enum

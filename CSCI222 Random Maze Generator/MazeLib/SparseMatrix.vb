@@ -4,11 +4,31 @@
    Private mDefaultValue As ObjectType
    Private mData As List(Of List(Of cVector(Of ObjectType)))
 
-   Public ReadOnly Property Data
-      Get
-         Return mData
-      End Get
-   End Property
+
+
+   ''' <summary>
+   ''' Clears the sparse matrix of values (which, infers that all addresses 
+   ''' will return the default value
+   ''' </summary>
+   Public Sub Clear()
+      For Each Row In mData
+         Row.Clear()
+      Next
+      mData.Clear()
+   End Sub
+
+   Public Sub PrintMatrix()
+      For x As Integer = 0 To mData.Count - 1
+         Debug.Write(mData(x).First().X & ":")
+
+         For y As Integer = 0 To mData(x).Count - 1
+            Debug.Write(mData(x)(y).Y & " ")
+         Next
+
+         Debug.WriteLine("")
+      Next
+
+   End Sub
 
    ''' <summary>
    ''' 
