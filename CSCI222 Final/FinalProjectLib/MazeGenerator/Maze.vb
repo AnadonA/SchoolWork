@@ -1,4 +1,16 @@
-﻿Public Class cMaze
+﻿'  NAME: Maze.vb
+'  INST: CVaughn CSCI222
+'  AUTH: Anthony Anadon (c) 2016
+'  DESC: Defines the cMaze class: its attributes and methods required to create
+'        and use simple text-based mazes.
+
+'  Required for the custom cSparseMatrix template
+Imports Generics
+
+''' <summary>
+''' 
+''' </summary>
+Public Class cMaze
    Public Const MAX_ROWS As Integer = 84
    Public Const MAX_COLS As Integer = 38
 
@@ -14,7 +26,7 @@
 
    Private mShiftPercent As Double = 0.0
    Private mMazeData(0 To MAX_COLS) As String
-   Private mMazeMatrix As cSparseMatrix(Of eMazeObjects)
+   Private mMazeMatrix As cSparseMatrix2D(Of eMazeObjects)
 
    ''' <summary>
    ''' Returns the compiled string array that will be used to display\draw the
@@ -28,21 +40,29 @@
    End Property
 
 
-
+   ''' <summary>
+   ''' The Default Constructor
+   ''' </summary>
    Public Sub New()
 
       '  Re-Seed the randomize functionalities
       mRand = New Random()
 
       '  Create the MazeMatrix and read it into the string data
-      mMazeMatrix = New cSparseMatrix(Of eMazeObjects)(eMazeObjects.WALL)
+      mMazeMatrix = New cSparseMatrix2D(Of eMazeObjects)(eMazeObjects.WALL)
+      CreateMaze()
       For i As Integer = 0 To 500
          mMazeMatrix.Insert(mRand.Next(0, MAX_COLS), mRand.Next(0, MAX_ROWS), eMazeObjects.PATH)
       Next
-      ReadMatrixToStrings()
 
+      '  Create the MazeString array
+      ReadMatrixToStrings()
    End Sub
 
+   ''' <summary>
+   ''' 
+   ''' </summary>
+   ''' <returns></returns>
    Public Function CreateMaze() As Boolean
 
       '  Re-Seed the randomize functionalities
@@ -63,7 +83,7 @@
 
 
       '  
-      Do While Not CreateNextPath(New cVector2(Of Integer)(0, 0))
+      Do While CreateNextPath(New cVector2(Of Integer)(0, 0))
       Loop
 
       Return False
@@ -72,6 +92,9 @@
    Public Function CreateNextPath(ByVal pCurrentPosition As cVector2(Of Integer)) As Boolean
 
       Dim PathOkay As Boolean = False
+
+      Static Dim X As Integer = -1
+      Static Dim Y As Integer = -1
       Static Dim RandomValue As Integer = 0
       Static Dim ShiftPercent As Integer = 0
       Static Dim CurrentDirection As Integer = 0
@@ -88,7 +111,6 @@
                RandomValue = mRand.Next(0, 3)
             Loop
             ShiftPercent = 0
-
          Else
 
             '  The path MAY shift but is not required to
@@ -113,9 +135,15 @@
 
       '  Apply the selected path
 
+      '  Test for the end
+
       Return False
    End Function
 
+   ''' <summary>
+   ''' Converts the mMazeMatrix data to the mMazeData string for use in the 
+   ''' text based maze.
+   ''' </summary>
    Private Sub ReadMatrixToStrings()
 
       '  Clear the maze string data

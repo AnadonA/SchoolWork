@@ -63,12 +63,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.vb" />
     <Compile Include="MazeGenerator\Directions.vb" />
     <Compile Include="MazeGenerator\Maze.vb" />
     <Compile Include="MazeGenerator\MazeObjects.vb" />
     <Compile Include="MazeGenerator\Vectors.vb" />
-    <Compile Include="MazeGenerator\SparseMatrix.vb" />
     <Compile Include="MazeGenerator\Walls.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -104,6 +102,12 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Generics\Generics.vbproj">
+      <Project>{bb35c410-1e7a-4a94-8df3-1e8b97d7d397}</Project>
+      <Name>Generics</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
