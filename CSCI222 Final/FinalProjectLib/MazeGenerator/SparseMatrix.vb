@@ -138,7 +138,98 @@ Public Class cSparseMatrix(Of ObjectType)
    ''' <returns></returns>
    Public Function Insert(ByVal pX As Integer, ByVal pY As Integer, ByVal pData As ObjectType) As Boolean
 
+      Dim IndexX As Integer = 0
+      Dim IndexY As Integer = 0
+      Dim Inserted As Boolean = False
 
+      Do While (Not Inserted And IndexX < mData.Count)
+
+         '  
+         Dim X As Integer = mData(IndexX).First().X
+         If (X.Equals(pX)) Then
+
+            Do While (Not Inserted And IndexY < mData(IndexX).Count)
+
+               Dim Y As Integer = mData(IndexX)(IndexY).Y
+               If (Y.Equals(pY)) Then
+
+                  '
+                  Dim Obj = mData(IndexX)(IndexY)
+                  Obj.Data = pData
+
+                  Inserted = True
+                  Exit Do
+
+               ElseIf (Y < pY) Then
+
+                  '  
+                  Dim NewObject As cSMEntry(Of ObjectType) = New cSMEntry(Of ObjectType)()
+                  NewObject.X = pX
+                  NewObject.Y = pY
+                  NewObject.Data = pData
+                  mData(IndexX).Insert(IndexY, NewObject)
+
+                  Insert = True
+                  mTotalEntries += 1
+                  Exit Do
+
+               End If
+
+               IndexY += 1
+            Loop
+
+            If (Not Inserted) Then
+
+               '  
+               Dim NewObject As cSMEntry(Of ObjectType) = New cSMEntry(Of ObjectType)()
+               NewObject.X = pX
+               NewObject.Y = pY
+               NewObject.Data = pData
+               mData(IndexX).Add(NewObject)
+
+               Insert = True
+               mTotalEntries += 1
+            End If
+
+         ElseIf (X < pX) Then
+
+            '  
+            Dim NewList As List(Of cSMEntry(Of ObjectType)) = New List(Of cSMEntry(Of ObjectType))()
+            Dim NewObject As cSMEntry(Of ObjectType) = New cSMEntry(Of ObjectType)()
+            NewObject.X = pX
+            NewObject.Y = pY
+            NewObject.Data = pData
+            NewList.Add(NewObject)
+            mData.Insert(IndexX, NewList)
+
+            Insert = True
+            mTotalEntries += 1
+            Exit Do
+
+         End If
+
+
+         IndexX += 1
+      Loop
+
+      If (Not Inserted) Then
+
+         '  The end of the list was reached without inserting the requested 
+         '  object. Create a new cSMEntry object, insert it into a new 
+         '  List(of cSMEntry) object, and insert that list into the mData 
+         '  List(of List(of cSMEntry)) object.
+         Dim NewList As List(Of cSMEntry(Of ObjectType)) = New List(Of cSMEntry(Of ObjectType))()
+         Dim NewObject As cSMEntry(Of ObjectType) = New cSMEntry(Of ObjectType)()
+         NewObject.X = pX
+         NewObject.Y = pY
+         NewObject.Data = pData
+         NewList.Add(NewObject)
+         mData.Add(NewList)
+
+         '  Increment the total entry count
+         Insert = True
+         mTotalEntries += 1
+      End If
 
       Return False
    End Function

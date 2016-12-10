@@ -31,8 +31,14 @@
 
    Public Sub New()
 
+      '  Re-Seed the randomize functionalities
+      mRand = New Random()
+
       '  Create the MazeMatrix and read it into the string data
       mMazeMatrix = New cSparseMatrix(Of eMazeObjects)(eMazeObjects.WALL)
+      For i As Integer = 0 To 500
+         mMazeMatrix.Insert(mRand.Next(0, MAX_COLS), mRand.Next(0, MAX_ROWS), eMazeObjects.PATH)
+      Next
       ReadMatrixToStrings()
 
    End Sub
@@ -54,6 +60,7 @@
          mStartWall = eWalls.TOP
          mEndWall = eWalls.BOTTOM
       End If
+
 
       '  
       Do While Not CreateNextPath(New cVector2(Of Integer)(0, 0))
