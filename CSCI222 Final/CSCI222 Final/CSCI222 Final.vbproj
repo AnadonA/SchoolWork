@@ -101,9 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -119,15 +119,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\bomb 01.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\flag.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\x.png" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\FinalProjectLib\FinalProjectLib.vbproj">
       <Project>{b915604e-6a3f-46fa-87f7-85eb7d28c101}</Project>
       <Name>FinalProjectLib</Name>
@@ -136,6 +127,12 @@
       <Project>{bb35c410-1e7a-4a94-8df3-1e8b97d7d397}</Project>
       <Name>Generics</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="128-214.jpg" />
+    <None Include="128-192.jpg" />
+    <Content Include="Resources\128-192.jpg" />
+    <Content Include="Resources\128-214.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
