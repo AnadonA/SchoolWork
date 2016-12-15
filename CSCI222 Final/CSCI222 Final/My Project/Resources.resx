@@ -118,10 +118,187 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="128-192" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\128-192.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Mass_Effect_card_deck" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Mass_Effect_card_deck.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="128-214" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\128-214.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ME Backs (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Backs (1)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Backs (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Backs (2)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Backs (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Backs (3)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Backs (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Backs (4)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Clubs (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Clubs (1)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Clubs (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Clubs (2)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Clubs (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Clubs (3)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Clubs (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Clubs (4)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Clubs (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Clubs (5)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Clubs (6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Clubs (6)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Clubs (7)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Clubs (7)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Clubs (8)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Clubs (8)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Clubs (9)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Clubs (9)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Clubs (10)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Clubs (10)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Clubs (11)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Clubs (11)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Clubs (12)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Clubs (12)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Clubs (13)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Clubs (13)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Diamonds (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Diamonds (1)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Diamonds (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Diamonds (2)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Diamonds (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Diamonds (3)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Diamonds (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Diamonds (4)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Diamonds (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Diamonds (5)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Diamonds (6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Diamonds (6)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Diamonds (7)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Diamonds (7)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Diamonds (8)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Diamonds (8)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Diamonds (9)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Diamonds (9)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Diamonds (10)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Diamonds (10)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Diamonds (11)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Diamonds (11)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Diamonds (12)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Diamonds (12)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Diamonds (13)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Diamonds (13)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Hearts (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Hearts (1)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Hearts (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Hearts (2)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Hearts (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Hearts (3)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Hearts (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Hearts (4)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Hearts (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Hearts (5)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Hearts (6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Hearts (6)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Hearts (7)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Hearts (7)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Hearts (8)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Hearts (8)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Hearts (9)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Hearts (9)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Hearts (10)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Hearts (10)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Hearts (11)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Hearts (11)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Hearts (12)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Hearts (12)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Hearts (13)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Hearts (13)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Jokers (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Jokers (1)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Jokers (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Jokers (2)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Jokers (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Jokers (3)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Jokers (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Jokers (4)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Spades (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Spades (1)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Spades (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Spades (2)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Spades (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Spades (3)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Spades (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Spades (4)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Spades (5)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Spades (5)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Spades (6)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Spades (6)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Spades (7)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Spades (7)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Spades (8)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Spades (8)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Spades (9)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Spades (9)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Spades (10)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Spades (10)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Spades (11)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Spades (11)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Spades (12)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Spades (12)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ME Spades (13)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ME Spades (13)1.jpeg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
