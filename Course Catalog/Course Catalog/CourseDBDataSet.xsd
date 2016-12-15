@@ -253,6 +253,96 @@
               <Mapping SourceColumn="StreedAddress" DataSetColumn="StreedAddress" />
               <Mapping SourceColumn="Suite" DataSetColumn="Suite" />
               <Mapping SourceColumn="ZipCode" DataSetColumn="ZipCode" />
+              <Mapping SourceColumn="Length" DataSetColumn="Length" />
+              <Mapping SourceColumn="Link" DataSetColumn="Link" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbCompleteOfferList1TableAdapter" GeneratorDataComponentClassName="tbCompleteOfferList1TableAdapter" Name="tbCompleteOfferList1" UserDataComponentName="tbCompleteOfferList1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CourseDBConnectionString (MySettings)" DbObjectName="tbCompleteOfferList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Name, OfferDate, City, StreedAddress, Suite, ZipCode FROM tbCompleteOfferList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="OfferDate" DataSetColumn="OfferDate" />
+              <Mapping SourceColumn="City" DataSetColumn="City" />
+              <Mapping SourceColumn="StreedAddress" DataSetColumn="StreedAddress" />
+              <Mapping SourceColumn="Suite" DataSetColumn="Suite" />
+              <Mapping SourceColumn="ZipCode" DataSetColumn="ZipCode" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbCurrentOfferList1TableAdapter" GeneratorDataComponentClassName="tbCurrentOfferList1TableAdapter" Name="tbCurrentOfferList1" UserDataComponentName="tbCurrentOfferList1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CourseDBConnectionString (MySettings)" DbObjectName="tbCurrentOfferList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Name, Link, OfferDate, City, StreedAddress, Suite, ZipCode, Length FROM tbCurrentOfferList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Link" DataSetColumn="Link" />
+              <Mapping SourceColumn="OfferDate" DataSetColumn="OfferDate" />
+              <Mapping SourceColumn="City" DataSetColumn="City" />
+              <Mapping SourceColumn="StreedAddress" DataSetColumn="StreedAddress" />
+              <Mapping SourceColumn="Suite" DataSetColumn="Suite" />
+              <Mapping SourceColumn="ZipCode" DataSetColumn="ZipCode" />
+              <Mapping SourceColumn="Length" DataSetColumn="Length" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbCompleteOfferList2TableAdapter" GeneratorDataComponentClassName="tbCompleteOfferList2TableAdapter" Name="tbCompleteOfferList2" UserDataComponentName="tbCompleteOfferList2TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CourseDBConnectionString (MySettings)" DbObjectName="tbCompleteOfferList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Name, OfferDate, City, StreedAddress, Suite, ZipCode FROM tbCompleteOfferList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="OfferDate" DataSetColumn="OfferDate" />
+              <Mapping SourceColumn="City" DataSetColumn="City" />
+              <Mapping SourceColumn="StreedAddress" DataSetColumn="StreedAddress" />
+              <Mapping SourceColumn="Suite" DataSetColumn="Suite" />
+              <Mapping SourceColumn="ZipCode" DataSetColumn="ZipCode" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tbCurrentOfferList2TableAdapter" GeneratorDataComponentClassName="tbCurrentOfferList2TableAdapter" Name="tbCurrentOfferList2" UserDataComponentName="tbCurrentOfferList2TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="CourseDBConnectionString (MySettings)" DbObjectName="tbCurrentOfferList" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Name, Link, OfferDate, City, StreedAddress, Suite, ZipCode, Length FROM tbCurrentOfferList</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Link" DataSetColumn="Link" />
+              <Mapping SourceColumn="OfferDate" DataSetColumn="OfferDate" />
+              <Mapping SourceColumn="City" DataSetColumn="City" />
+              <Mapping SourceColumn="StreedAddress" DataSetColumn="StreedAddress" />
+              <Mapping SourceColumn="Suite" DataSetColumn="Suite" />
+              <Mapping SourceColumn="ZipCode" DataSetColumn="ZipCode" />
+              <Mapping SourceColumn="Length" DataSetColumn="Length" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -264,7 +354,7 @@
   <xs:element name="CourseDBDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="CourseDBDataSet" msprop:Generator_UserDSName="CourseDBDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tbCourses" msprop:Generator_TableClassName="tbCoursesDataTable" msprop:Generator_TableVarName="tabletbCourses" msprop:Generator_TablePropName="tbCourses" msprop:Generator_RowDeletingName="tbCoursesRowDeleting" msprop:Generator_RowChangingName="tbCoursesRowChanging" msprop:Generator_RowEvHandlerName="tbCoursesRowChangeEventHandler" msprop:Generator_RowDeletedName="tbCoursesRowDeleted" msprop:Generator_UserTableName="tbCourses" msprop:Generator_RowChangedName="tbCoursesRowChanged" msprop:Generator_RowEvArgName="tbCoursesRowChangeEvent" msprop:Generator_RowClassName="tbCoursesRow">
+        <xs:element name="tbCourses" msprop:Generator_TableClassName="tbCoursesDataTable" msprop:Generator_TableVarName="tabletbCourses" msprop:Generator_RowChangedName="tbCoursesRowChanged" msprop:Generator_TablePropName="tbCourses" msprop:Generator_RowDeletingName="tbCoursesRowDeleting" msprop:Generator_RowChangingName="tbCoursesRowChanging" msprop:Generator_RowEvHandlerName="tbCoursesRowChangeEventHandler" msprop:Generator_RowDeletedName="tbCoursesRowDeleted" msprop:Generator_RowClassName="tbCoursesRow" msprop:Generator_UserTableName="tbCourses" msprop:Generator_RowEvArgName="tbCoursesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -293,7 +383,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbDates" msprop:Generator_TableClassName="tbDatesDataTable" msprop:Generator_TableVarName="tabletbDates" msprop:Generator_TablePropName="tbDates" msprop:Generator_RowDeletingName="tbDatesRowDeleting" msprop:Generator_RowChangingName="tbDatesRowChanging" msprop:Generator_RowEvHandlerName="tbDatesRowChangeEventHandler" msprop:Generator_RowDeletedName="tbDatesRowDeleted" msprop:Generator_UserTableName="tbDates" msprop:Generator_RowChangedName="tbDatesRowChanged" msprop:Generator_RowEvArgName="tbDatesRowChangeEvent" msprop:Generator_RowClassName="tbDatesRow">
+        <xs:element name="tbDates" msprop:Generator_TableClassName="tbDatesDataTable" msprop:Generator_TableVarName="tabletbDates" msprop:Generator_RowChangedName="tbDatesRowChanged" msprop:Generator_TablePropName="tbDates" msprop:Generator_RowDeletingName="tbDatesRowDeleting" msprop:Generator_RowChangingName="tbDatesRowChanging" msprop:Generator_RowEvHandlerName="tbDatesRowChangeEventHandler" msprop:Generator_RowDeletedName="tbDatesRowDeleted" msprop:Generator_RowClassName="tbDatesRow" msprop:Generator_UserTableName="tbDates" msprop:Generator_RowEvArgName="tbDatesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -305,7 +395,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbLocations" msprop:Generator_TableClassName="tbLocationsDataTable" msprop:Generator_TableVarName="tabletbLocations" msprop:Generator_TablePropName="tbLocations" msprop:Generator_RowDeletingName="tbLocationsRowDeleting" msprop:Generator_RowChangingName="tbLocationsRowChanging" msprop:Generator_RowEvHandlerName="tbLocationsRowChangeEventHandler" msprop:Generator_RowDeletedName="tbLocationsRowDeleted" msprop:Generator_UserTableName="tbLocations" msprop:Generator_RowChangedName="tbLocationsRowChanged" msprop:Generator_RowEvArgName="tbLocationsRowChangeEvent" msprop:Generator_RowClassName="tbLocationsRow">
+        <xs:element name="tbLocations" msprop:Generator_TableClassName="tbLocationsDataTable" msprop:Generator_TableVarName="tabletbLocations" msprop:Generator_RowChangedName="tbLocationsRowChanged" msprop:Generator_TablePropName="tbLocations" msprop:Generator_RowDeletingName="tbLocationsRowDeleting" msprop:Generator_RowChangingName="tbLocationsRowChanging" msprop:Generator_RowEvHandlerName="tbLocationsRowChangeEventHandler" msprop:Generator_RowDeletedName="tbLocationsRowDeleted" msprop:Generator_RowClassName="tbLocationsRow" msprop:Generator_UserTableName="tbLocations" msprop:Generator_RowEvArgName="tbLocationsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
@@ -347,7 +437,94 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbCompleteOfferList" msprop:Generator_TableClassName="tbCompleteOfferListDataTable" msprop:Generator_TableVarName="tabletbCompleteOfferList" msprop:Generator_TablePropName="tbCompleteOfferList" msprop:Generator_RowDeletingName="tbCompleteOfferListRowDeleting" msprop:Generator_RowChangingName="tbCompleteOfferListRowChanging" msprop:Generator_RowEvHandlerName="tbCompleteOfferListRowChangeEventHandler" msprop:Generator_RowDeletedName="tbCompleteOfferListRowDeleted" msprop:Generator_UserTableName="tbCompleteOfferList" msprop:Generator_RowChangedName="tbCompleteOfferListRowChanged" msprop:Generator_RowEvArgName="tbCompleteOfferListRowChangeEvent" msprop:Generator_RowClassName="tbCompleteOfferListRow">
+        <xs:element name="tbCompleteOfferList" msprop:Generator_TableClassName="tbCompleteOfferListDataTable" msprop:Generator_TableVarName="tabletbCompleteOfferList" msprop:Generator_RowChangedName="tbCompleteOfferListRowChanged" msprop:Generator_TablePropName="tbCompleteOfferList" msprop:Generator_RowDeletingName="tbCompleteOfferListRowDeleting" msprop:Generator_RowChangingName="tbCompleteOfferListRowChanging" msprop:Generator_RowEvHandlerName="tbCompleteOfferListRowChangeEventHandler" msprop:Generator_RowDeletedName="tbCompleteOfferListRowDeleted" msprop:Generator_RowClassName="tbCompleteOfferListRow" msprop:Generator_UserTableName="tbCompleteOfferList" msprop:Generator_RowEvArgName="tbCompleteOfferListRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OfferDate" msprop:Generator_ColumnVarNameInTable="columnOfferDate" msprop:Generator_ColumnPropNameInRow="OfferDate" msprop:Generator_ColumnPropNameInTable="OfferDateColumn" msprop:Generator_UserColumnName="OfferDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="City" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_UserColumnName="City" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StreedAddress" msprop:Generator_ColumnVarNameInTable="columnStreedAddress" msprop:Generator_ColumnPropNameInRow="StreedAddress" msprop:Generator_ColumnPropNameInTable="StreedAddressColumn" msprop:Generator_UserColumnName="StreedAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Suite" msprop:Generator_ColumnVarNameInTable="columnSuite" msprop:Generator_ColumnPropNameInRow="Suite" msprop:Generator_ColumnPropNameInTable="SuiteColumn" msprop:Generator_UserColumnName="Suite" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ZipCode" msprop:Generator_ColumnVarNameInTable="columnZipCode" msprop:Generator_ColumnPropNameInRow="ZipCode" msprop:Generator_ColumnPropNameInTable="ZipCodeColumn" msprop:Generator_UserColumnName="ZipCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Link" msprop:Generator_ColumnVarNameInTable="columnLink" msprop:Generator_ColumnPropNameInRow="Link" msprop:Generator_ColumnPropNameInTable="LinkColumn" msprop:Generator_UserColumnName="Link" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbCurrentOfferList" msprop:Generator_TableClassName="tbCurrentOfferListDataTable" msprop:Generator_TableVarName="tabletbCurrentOfferList" msprop:Generator_RowChangedName="tbCurrentOfferListRowChanged" msprop:Generator_TablePropName="tbCurrentOfferList" msprop:Generator_RowDeletingName="tbCurrentOfferListRowDeleting" msprop:Generator_RowChangingName="tbCurrentOfferListRowChanging" msprop:Generator_RowEvHandlerName="tbCurrentOfferListRowChangeEventHandler" msprop:Generator_RowDeletedName="tbCurrentOfferListRowDeleted" msprop:Generator_RowClassName="tbCurrentOfferListRow" msprop:Generator_UserTableName="tbCurrentOfferList" msprop:Generator_RowEvArgName="tbCurrentOfferListRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OfferDate" msprop:Generator_ColumnVarNameInTable="columnOfferDate" msprop:Generator_ColumnPropNameInRow="OfferDate" msprop:Generator_ColumnPropNameInTable="OfferDateColumn" msprop:Generator_UserColumnName="OfferDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="City" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_UserColumnName="City" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StreedAddress" msprop:Generator_ColumnVarNameInTable="columnStreedAddress" msprop:Generator_ColumnPropNameInRow="StreedAddress" msprop:Generator_ColumnPropNameInTable="StreedAddressColumn" msprop:Generator_UserColumnName="StreedAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Suite" msprop:Generator_ColumnVarNameInTable="columnSuite" msprop:Generator_ColumnPropNameInRow="Suite" msprop:Generator_ColumnPropNameInTable="SuiteColumn" msprop:Generator_UserColumnName="Suite" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ZipCode" msprop:Generator_ColumnVarNameInTable="columnZipCode" msprop:Generator_ColumnPropNameInRow="ZipCode" msprop:Generator_ColumnPropNameInTable="ZipCodeColumn" msprop:Generator_UserColumnName="ZipCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Link" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="Link" msprop:Generator_ColumnVarNameInTable="columnLink" msprop:Generator_ColumnPropNameInTable="LinkColumn" msprop:Generator_UserColumnName="Link" type="xs:string" minOccurs="0" />
+              <xs:element name="Length" msprop:Generator_ColumnVarNameInTable="columnLength" msprop:Generator_ColumnPropNameInRow="Length" msprop:Generator_ColumnPropNameInTable="LengthColumn" msprop:Generator_UserColumnName="Length" type="xs:anyType" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbCompleteOfferList1" msprop:Generator_TableClassName="tbCompleteOfferList1DataTable" msprop:Generator_TableVarName="tabletbCompleteOfferList1" msprop:Generator_RowChangedName="tbCompleteOfferList1RowChanged" msprop:Generator_TablePropName="tbCompleteOfferList1" msprop:Generator_RowDeletingName="tbCompleteOfferList1RowDeleting" msprop:Generator_RowChangingName="tbCompleteOfferList1RowChanging" msprop:Generator_RowEvHandlerName="tbCompleteOfferList1RowChangeEventHandler" msprop:Generator_RowDeletedName="tbCompleteOfferList1RowDeleted" msprop:Generator_RowClassName="tbCompleteOfferList1Row" msprop:Generator_UserTableName="tbCompleteOfferList1" msprop:Generator_RowEvArgName="tbCompleteOfferList1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
@@ -389,7 +566,57 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="tbCurrentOfferList" msprop:Generator_TableClassName="tbCurrentOfferListDataTable" msprop:Generator_TableVarName="tabletbCurrentOfferList" msprop:Generator_TablePropName="tbCurrentOfferList" msprop:Generator_RowDeletingName="tbCurrentOfferListRowDeleting" msprop:Generator_RowChangingName="tbCurrentOfferListRowChanging" msprop:Generator_RowEvHandlerName="tbCurrentOfferListRowChangeEventHandler" msprop:Generator_RowDeletedName="tbCurrentOfferListRowDeleted" msprop:Generator_UserTableName="tbCurrentOfferList" msprop:Generator_RowChangedName="tbCurrentOfferListRowChanged" msprop:Generator_RowEvArgName="tbCurrentOfferListRowChangeEvent" msprop:Generator_RowClassName="tbCurrentOfferListRow">
+        <xs:element name="tbCurrentOfferList1" msprop:Generator_TableClassName="tbCurrentOfferList1DataTable" msprop:Generator_TableVarName="tabletbCurrentOfferList1" msprop:Generator_RowChangedName="tbCurrentOfferList1RowChanged" msprop:Generator_TablePropName="tbCurrentOfferList1" msprop:Generator_RowDeletingName="tbCurrentOfferList1RowDeleting" msprop:Generator_RowChangingName="tbCurrentOfferList1RowChanging" msprop:Generator_RowEvHandlerName="tbCurrentOfferList1RowChangeEventHandler" msprop:Generator_RowDeletedName="tbCurrentOfferList1RowDeleted" msprop:Generator_RowClassName="tbCurrentOfferList1Row" msprop:Generator_UserTableName="tbCurrentOfferList1" msprop:Generator_RowEvArgName="tbCurrentOfferList1RowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Link" msprop:Generator_ColumnVarNameInTable="columnLink" msprop:Generator_ColumnPropNameInRow="Link" msprop:Generator_ColumnPropNameInTable="LinkColumn" msprop:Generator_UserColumnName="Link" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OfferDate" msprop:Generator_ColumnVarNameInTable="columnOfferDate" msprop:Generator_ColumnPropNameInRow="OfferDate" msprop:Generator_ColumnPropNameInTable="OfferDateColumn" msprop:Generator_UserColumnName="OfferDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="City" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_UserColumnName="City" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StreedAddress" msprop:Generator_ColumnVarNameInTable="columnStreedAddress" msprop:Generator_ColumnPropNameInRow="StreedAddress" msprop:Generator_ColumnPropNameInTable="StreedAddressColumn" msprop:Generator_UserColumnName="StreedAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Suite" msprop:Generator_ColumnVarNameInTable="columnSuite" msprop:Generator_ColumnPropNameInRow="Suite" msprop:Generator_ColumnPropNameInTable="SuiteColumn" msprop:Generator_UserColumnName="Suite" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ZipCode" msprop:Generator_ColumnVarNameInTable="columnZipCode" msprop:Generator_ColumnPropNameInRow="ZipCode" msprop:Generator_ColumnPropNameInTable="ZipCodeColumn" msprop:Generator_UserColumnName="ZipCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Length" msprop:Generator_ColumnVarNameInTable="columnLength" msprop:Generator_ColumnPropNameInRow="Length" msprop:Generator_ColumnPropNameInTable="LengthColumn" msprop:Generator_UserColumnName="Length" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbCompleteOfferList2" msprop:Generator_TableClassName="tbCompleteOfferList2DataTable" msprop:Generator_TableVarName="tabletbCompleteOfferList2" msprop:Generator_TablePropName="tbCompleteOfferList2" msprop:Generator_RowDeletingName="tbCompleteOfferList2RowDeleting" msprop:Generator_RowChangingName="tbCompleteOfferList2RowChanging" msprop:Generator_RowEvHandlerName="tbCompleteOfferList2RowChangeEventHandler" msprop:Generator_RowDeletedName="tbCompleteOfferList2RowDeleted" msprop:Generator_UserTableName="tbCompleteOfferList2" msprop:Generator_RowChangedName="tbCompleteOfferList2RowChanged" msprop:Generator_RowEvArgName="tbCompleteOfferList2RowChangeEvent" msprop:Generator_RowClassName="tbCompleteOfferList2Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
@@ -428,6 +655,56 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tbCurrentOfferList2" msprop:Generator_TableClassName="tbCurrentOfferList2DataTable" msprop:Generator_TableVarName="tabletbCurrentOfferList2" msprop:Generator_TablePropName="tbCurrentOfferList2" msprop:Generator_RowDeletingName="tbCurrentOfferList2RowDeleting" msprop:Generator_RowChangingName="tbCurrentOfferList2RowChanging" msprop:Generator_RowEvHandlerName="tbCurrentOfferList2RowChangeEventHandler" msprop:Generator_RowDeletedName="tbCurrentOfferList2RowDeleted" msprop:Generator_UserTableName="tbCurrentOfferList2" msprop:Generator_RowChangedName="tbCurrentOfferList2RowChanged" msprop:Generator_RowEvArgName="tbCurrentOfferList2RowChangeEvent" msprop:Generator_RowClassName="tbCurrentOfferList2Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Link" msprop:Generator_ColumnVarNameInTable="columnLink" msprop:Generator_ColumnPropNameInRow="Link" msprop:Generator_ColumnPropNameInTable="LinkColumn" msprop:Generator_UserColumnName="Link" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="OfferDate" msprop:Generator_ColumnVarNameInTable="columnOfferDate" msprop:Generator_ColumnPropNameInRow="OfferDate" msprop:Generator_ColumnPropNameInTable="OfferDateColumn" msprop:Generator_UserColumnName="OfferDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="City" msprop:Generator_ColumnVarNameInTable="columnCity" msprop:Generator_ColumnPropNameInRow="City" msprop:Generator_ColumnPropNameInTable="CityColumn" msprop:Generator_UserColumnName="City" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StreedAddress" msprop:Generator_ColumnVarNameInTable="columnStreedAddress" msprop:Generator_ColumnPropNameInRow="StreedAddress" msprop:Generator_ColumnPropNameInTable="StreedAddressColumn" msprop:Generator_UserColumnName="StreedAddress" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Suite" msprop:Generator_ColumnVarNameInTable="columnSuite" msprop:Generator_ColumnPropNameInRow="Suite" msprop:Generator_ColumnPropNameInTable="SuiteColumn" msprop:Generator_UserColumnName="Suite" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ZipCode" msprop:Generator_ColumnVarNameInTable="columnZipCode" msprop:Generator_ColumnPropNameInRow="ZipCode" msprop:Generator_ColumnPropNameInTable="ZipCodeColumn" msprop:Generator_UserColumnName="ZipCode" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Length" msprop:Generator_ColumnVarNameInTable="columnLength" msprop:Generator_ColumnPropNameInRow="Length" msprop:Generator_ColumnPropNameInTable="LengthColumn" msprop:Generator_UserColumnName="Length" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -448,8 +725,8 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="tbCoursestbDates" msdata:parent="tbCourses" msdata:child="tbDates" msdata:parentkey="ID" msdata:childkey="CourseID" msprop:Generator_UserChildTable="tbDates" msprop:Generator_ChildPropName="GettbDatesRows" msprop:Generator_UserRelationName="tbCoursestbDates" msprop:Generator_ParentPropName="tbCoursesRow" msprop:Generator_RelationVarName="relationtbCoursestbDates" msprop:Generator_UserParentTable="tbCourses" />
-      <msdata:Relationship name="tbLocationstbDates" msdata:parent="tbLocations" msdata:child="tbDates" msdata:parentkey="ID" msdata:childkey="LocationID" msprop:Generator_UserChildTable="tbDates" msprop:Generator_ChildPropName="GettbDatesRows" msprop:Generator_UserRelationName="tbLocationstbDates" msprop:Generator_RelationVarName="relationtbLocationstbDates" msprop:Generator_UserParentTable="tbLocations" msprop:Generator_ParentPropName="tbLocationsRow" />
+      <msdata:Relationship name="tbCoursestbDates" msdata:parent="tbCourses" msdata:child="tbDates" msdata:parentkey="ID" msdata:childkey="CourseID" msprop:Generator_UserChildTable="tbDates" msprop:Generator_ChildPropName="GettbDatesRows" msprop:Generator_UserRelationName="tbCoursestbDates" msprop:Generator_RelationVarName="relationtbCoursestbDates" msprop:Generator_UserParentTable="tbCourses" msprop:Generator_ParentPropName="tbCoursesRow" />
+      <msdata:Relationship name="tbLocationstbDates" msdata:parent="tbLocations" msdata:child="tbDates" msdata:parentkey="ID" msdata:childkey="LocationID" msprop:Generator_UserChildTable="tbDates" msprop:Generator_ChildPropName="GettbDatesRows" msprop:Generator_UserRelationName="tbLocationstbDates" msprop:Generator_ParentPropName="tbLocationsRow" msprop:Generator_RelationVarName="relationtbLocationstbDates" msprop:Generator_UserParentTable="tbLocations" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

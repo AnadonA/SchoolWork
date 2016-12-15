@@ -22,6 +22,7 @@ Partial Class frmMain
    'Do not modify it using the code editor.
    <System.Diagnostics.DebuggerStepThrough()>
    Private Sub InitializeComponent()
+      Me.components = New System.ComponentModel.Container()
       Me.mnuMain = New System.Windows.Forms.MenuStrip()
       Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
       Me.btnNewGame = New System.Windows.Forms.ToolStripMenuItem()
@@ -29,9 +30,10 @@ Partial Class frmMain
       Me.btnExitGame = New System.Windows.Forms.ToolStripMenuItem()
       Me.btnHelp = New System.Windows.Forms.ToolStripMenuItem()
       Me.btnTerminal = New System.Windows.Forms.ToolStripMenuItem()
-      Me.pbxDefaultCard = New System.Windows.Forms.PictureBox()
+      Me.tmrTime = New System.Windows.Forms.Timer(Me.components)
+      Me.tmrGameTime = New System.Windows.Forms.Timer(Me.components)
+      Me.tmrFlipper = New System.Windows.Forms.Timer(Me.components)
       Me.mnuMain.SuspendLayout()
-      CType(Me.pbxDefaultCard, System.ComponentModel.ISupportInitialize).BeginInit()
       Me.SuspendLayout()
       '
       'mnuMain
@@ -81,21 +83,20 @@ Partial Class frmMain
       Me.btnTerminal.Name = "btnTerminal"
       Me.btnTerminal.ShortcutKeys = CType(((System.Windows.Forms.Keys.Control Or System.Windows.Forms.Keys.Shift) _
             Or System.Windows.Forms.Keys.T), System.Windows.Forms.Keys)
-      Me.btnTerminal.Size = New System.Drawing.Size(193, 22)
+      Me.btnTerminal.Size = New System.Drawing.Size(194, 22)
       Me.btnTerminal.Text = "&Terminal"
       Me.btnTerminal.Visible = False
       '
-      'pbxDefaultCard
+      'tmrTime
       '
-      Me.pbxDefaultCard.Image = Global.CSCI222_Final.My.Resources.Resources.ME_Backs__4_
-      Me.pbxDefaultCard.InitialImage = Global.CSCI222_Final.My.Resources.Resources.Mass_Effect_card_deck
-      Me.pbxDefaultCard.Location = New System.Drawing.Point(11, 26)
-      Me.pbxDefaultCard.Margin = New System.Windows.Forms.Padding(2)
-      Me.pbxDefaultCard.Name = "pbxDefaultCard"
-      Me.pbxDefaultCard.Size = New System.Drawing.Size(70, 102)
-      Me.pbxDefaultCard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-      Me.pbxDefaultCard.TabIndex = 1
-      Me.pbxDefaultCard.TabStop = False
+      Me.tmrTime.Interval = 30000
+      '
+      'tmrGameTime
+      '
+      Me.tmrGameTime.Interval = 1000
+      '
+      'tmrFlipper
+      '
       '
       'frmMain
       '
@@ -103,7 +104,6 @@ Partial Class frmMain
       Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
       Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
       Me.ClientSize = New System.Drawing.Size(784, 561)
-      Me.Controls.Add(Me.pbxDefaultCard)
       Me.Controls.Add(Me.mnuMain)
       Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
       Me.MainMenuStrip = Me.mnuMain
@@ -114,7 +114,6 @@ Partial Class frmMain
       Me.Text = "CSCI222 Final Project AAnadon"
       Me.mnuMain.ResumeLayout(False)
       Me.mnuMain.PerformLayout()
-      CType(Me.pbxDefaultCard, System.ComponentModel.ISupportInitialize).EndInit()
       Me.ResumeLayout(False)
       Me.PerformLayout()
 
@@ -127,5 +126,7 @@ Partial Class frmMain
    Friend WithEvents btnExitGame As ToolStripMenuItem
    Friend WithEvents btnHelp As ToolStripMenuItem
    Friend WithEvents btnTerminal As ToolStripMenuItem
-   Friend WithEvents pbxDefaultCard As PictureBox
+   Friend WithEvents tmrTime As Timer
+   Friend WithEvents tmrGameTime As Timer
+   Friend WithEvents tmrFlipper As Timer
 End Class
